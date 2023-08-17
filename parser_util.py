@@ -10,7 +10,7 @@ def get_parser():
                         help='path to dataset',
                         default='..' + os.sep + 'dataset')
 
-    parser.add_argument('--experiment_root',
+    parser.add_argument('--save_model_path',
                         type=str,
                         help='root where to store models, losses and accuracies',
                         default='..' + os.sep + 'output')
@@ -55,6 +55,11 @@ def get_parser():
                         type=int,
                         help='input for the manual seeds initializations',
                         default=2103)
+
+    parser.add_argument('--batch_size',
+                        type=int,
+                        help='input for the batch size initializations',
+                        default= 8192)
 
     parser.add_argument('--test',
                         action='store_true',

@@ -9,7 +9,8 @@ import torchvision
 def load_dataset(
     args
 )-> Tuple:
-    DS_PATH = args.root
+    DS_PATH = args.dataset_root
+    
     # region Detete empty folder in train, test and valid
     PATH = os.path.join(DS_PATH, 'train')
     small_fds =[fd for fd in tqdm(os.listdir(PATH)) if len(os.listdir(os.path.join(PATH, fd))) < 247]

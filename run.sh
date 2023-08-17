@@ -1,6 +1,6 @@
 python run.py --batch_size 8192 \
-          --save_model_path '/content/drive/MyDrive/Master/NLP/Baseline/Protonet/5w1s' \
-          --root /content/dataset_han_nom_real_synth \
+          --experiment_root '/content/drive/MyDrive/Master/NLP/Baseline/Protonet/5w1s' \
+          --dataset_root  /content/dataset_han_nom_real_synth \
           --epochs 100 \
           --startIter 0 \
           --maxIter 100000 \

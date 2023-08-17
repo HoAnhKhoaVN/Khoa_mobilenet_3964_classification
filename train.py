@@ -77,7 +77,7 @@ def train(
                 with open(f'{save_model_path}/log_train.txt', 'a') as log:
                     model.eval()
                     with torch.no_grad():
-                        current_accuracy, valid_loss = evaluate(model, valloader)
+                        current_accuracy, valid_loss = evaluate(model, valloader, criterion, device)
                     model.train()
 
                     # training loss and validation loss

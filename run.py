@@ -107,7 +107,8 @@ def main():
         test_acc, _ = evaluate(
             model,
             testloader,
-            criterion
+            criterion,
+            device
         )
         
         with open(f'{args.save_model_path}/test.log', 'w', encoding='utf-8') as log:
