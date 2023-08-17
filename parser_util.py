@@ -51,10 +51,10 @@ def get_parser():
                             type=float,
                             help='eps parameter in AdaAdam, default=1e-05',
                             default=1e-05)
-    parser.add_argument('-seed', '--manual_seed',
+    parser.add_argument('-se', '--seed',
                         type=int,
                         help='input for the manual seeds initializations',
-                        default=7)
+                        default=2103)
 
     parser.add_argument('--test',
                         action='store_true',

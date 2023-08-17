@@ -7,7 +7,7 @@ import torch.optim as optim
 from mobilenet import MyMobileNetV2
 from torch.utils.tensorboard import SummaryWriter
 from train import train, evaluate
-from os import makedirs
+from os import makedirs, path
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -20,11 +20,11 @@ def init_model(
     # endregion
 
     # region Load checkpoints if available
-    if os.path.exists(checkpoint_path):
+    if path.exists(checkpoint_path):
         print(f'loading pretrained model from {checkpoint_path}')
         model.load_state_dict(
             torch.load(
-                os.path.join(checkpoint_path)
+                path.join(checkpoint_path)
             )
         )
     # endregion
@@ -59,7 +59,7 @@ def main():
 
     # region get model
     model = init_model(
-        checkpoint_path = os.path.join(args.save_model_path, 'best_model.pth'),
+        checkpoint_path = path.join(args.save_model_path, 'best_model.pth'),
         num_classes= len(classes),
     )
     # endregion
