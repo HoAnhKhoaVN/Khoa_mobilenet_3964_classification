@@ -15,6 +15,12 @@ def get_parser():
                         help='root where to store models, losses and accuracies',
                         default='..' + os.sep + 'output')
 
+
+    parser.add_argument('--checkpoint_path',
+                        type=str,
+                        help='root where to store checkpoit to init weight for model',
+                        default='..' + os.sep + 'output')
+
     parser.add_argument('--epochs',
                         type=int,
                         help='number of epochs to train for',
