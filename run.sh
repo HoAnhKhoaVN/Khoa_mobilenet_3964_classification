@@ -8,7 +8,7 @@ python run.py --batch_size 8192 \
           --valIter 100 \
           --train \
           --test \
-          --learning_rate 2.0 \
+          --learning_rate 1.0 \
           --rho 0.9 \
           --eps 1e-05 \
           --seed 2103 \
