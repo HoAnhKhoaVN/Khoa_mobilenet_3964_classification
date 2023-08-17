@@ -5,53 +5,53 @@ import argparse
 
 def get_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-root', '--dataset_root',
+    parser.add_argument('--dataset_root',
                         type=str,
                         help='path to dataset',
                         default='..' + os.sep + 'dataset')
 
-    parser.add_argument('-exp', '--experiment_root',
+    parser.add_argument('--experiment_root',
                         type=str,
                         help='root where to store models, losses and accuracies',
                         default='..' + os.sep + 'output')
 
-    parser.add_argument('-nep', '--epochs',
+    parser.add_argument('--epochs',
                         type=int,
                         help='number of epochs to train for',
                         default=100)
 
-    parser.add_argument('-sIt', '--startIter',
+    parser.add_argument('--startIter',
                         type=int,
                         help='Start iteration',
                         default=0)
 
 
-    parser.add_argument('-maxI', '--maxIter',
+    parser.add_argument('--maxIter',
                         type=int,
                         help='Max iteration',
                         default=100000)
     
-    parser.add_argument('-valI', '--valIter',
+    parser.add_argument('--valIter',
                         type=int,
                         help='Validation iteration',
                         default=100)
 
 
-    parser.add_argument('-lr', '--learning_rate',
+    parser.add_argument('--learning_rate',
                         type=float,
                         help='learning rate for the model, default=2.0',
                         default=2.0)
 
-    parser.add_argument('-rho', '--rho',
+    parser.add_argument('--rho',
                             type=float,
                             help='rho parameter in AdaAdam, default=0.9',
                             default=2.0)
 
-    parser.add_argument('-eps', '--eps',
+    parser.add_argument('--eps',
                             type=float,
                             help='eps parameter in AdaAdam, default=1e-05',
                             default=1e-05)
-    parser.add_argument('-se', '--seed',
+    parser.add_argument('--seed',
                         type=int,
                         help='input for the manual seeds initializations',
                         default=2103)

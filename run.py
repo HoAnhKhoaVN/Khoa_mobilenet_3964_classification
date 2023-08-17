@@ -32,7 +32,9 @@ def init_model(
 
 def main():
     # region Load arguments
-    args = get_parser()
+    parser = get_parser()
+    args = parser.parse_args()
+    print(f'args: {args}')
     
     # endregion
 
