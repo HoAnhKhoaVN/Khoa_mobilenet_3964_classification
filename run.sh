@@ -1,5 +1,6 @@
 python run.py --batch_size 8192 \
           --save_model_path '/content/drive/MyDrive/Master/NLP/Experiment/Protonet/5w1s' \
+          --checkpoint_path '/content/drive/MyDrive/Master/NLP/Experiment/Protonet/5w1s/best_model.pth' \
           --dataset_root  /content/dataset_han_nom_real_synth \
           --epochs 100 \
           --startIter 0 \

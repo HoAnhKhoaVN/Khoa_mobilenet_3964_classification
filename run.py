@@ -61,7 +61,7 @@ def main():
 
     # region get model
     model = init_model(
-        checkpoint_path = path.join(args.save_model_path, 'best_model.pth'),
+        checkpoint_path = args.checkpoint_path,
         num_classes= len(classes),
     )
     # endregion
