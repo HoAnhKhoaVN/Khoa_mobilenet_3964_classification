@@ -14,6 +14,11 @@ def get_parser():
                         type=str,
                         help='root where to store models, losses and accuracies',
                         default='..' + os.sep + 'output')
+    
+    parser.add_argument('--mode',
+                        type=str,
+                        help='base|maml|protonet',
+                        default='base')
 
 
     parser.add_argument('--checkpoint_path',

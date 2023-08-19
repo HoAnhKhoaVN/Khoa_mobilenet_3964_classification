@@ -12,3 +12,4 @@ python run.py --batch_size 8192 \
           --rho 0.9 \
           --eps 1e-05 \
           --seed 2103 \
+          --mode maml

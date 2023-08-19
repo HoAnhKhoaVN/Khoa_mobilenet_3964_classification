@@ -8,15 +8,21 @@ from mobilenet import MyMobileNetV2
 from torch.utils.tensorboard import SummaryWriter
 from train import train, evaluate
 from os import makedirs, path
+from mobilenetv2 import MobileNetV2
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def init_model(
     checkpoint_path: str,
     num_classes: int,
+    mode: str = 'base'
 ):
     # region
-    model = MyMobileNetV2(num_classes = num_classes).to(device)
+    if mode.lower() == 'maml':
+        model = MobileNetV2(num_classes = num_classes).to(device)
+    else:
+    
+        model = MyMobileNetV2(num_classes = num_classes).to(device)
     # endregion
 
     # region Load checkpoints if available
@@ -63,6 +69,7 @@ def main():
     model = init_model(
         checkpoint_path = args.checkpoint_path,
         num_classes= len(classes),
+        mode = args.mode,
     )
     # endregion
 
