@@ -1,6 +1,6 @@
 python run.py --batch_size 64 \
           --save_model_path '/content/drive/MyDrive/Master/NomTemple/CLS' \
-          --dataset_root  /content/han_nom_cls_v1 \
+          --dataset_root  /content/han_nom_cls_v2 \
           --epochs 100 \
           --startIter 0 \
           --maxIter 1000 \
