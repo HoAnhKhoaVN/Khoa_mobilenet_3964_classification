@@ -73,11 +73,13 @@ def get_parser():
                         default= 8192)
 
     parser.add_argument('--test',
-                        action='store_true',
+                        type = bool,
+                        default= True, 
                         help='Test mode')
     
     parser.add_argument('--train',
-                        action='store_true',
+                        type = bool,
+                        default= True, 
                         help='Train mode')
 
 

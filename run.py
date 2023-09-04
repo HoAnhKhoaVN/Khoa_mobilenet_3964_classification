@@ -9,6 +9,7 @@ from torch.utils.tensorboard import SummaryWriter
 from train import train, evaluate
 from os import makedirs, path
 from mobilenetv2 import MobileNetV2
+from my_efficientnet_b3 import MyEfficientnetB3
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -20,8 +21,9 @@ def init_model(
     # region
     if mode.lower() == 'maml':
         model = MobileNetV2(num_classes = num_classes).to(device)
+    if mode.lower() == 'han_nom_cls':
+       model = MyEfficientnetB3(num_classes=4)
     else:
-    
         model = MyMobileNetV2(num_classes = num_classes).to(device)
     # endregion
 
@@ -111,6 +113,7 @@ def main():
 
     # region test
     if args.test:
+        model.eval()
         test_acc, _ = evaluate(
             model,
             testloader,
