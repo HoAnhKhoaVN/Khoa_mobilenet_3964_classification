@@ -5,6 +5,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision.datasets import ImageFolder
 from typing import Text, List, Tuple
 import torchvision
+IMG_SIZE = 224
 
 def load_dataset(
     args
@@ -40,7 +41,7 @@ def load_dataset(
     transform = transforms.Compose(
         [
             transforms.ToTensor(),
-            transforms.Resize((32, 32), antialias= False),
+            transforms.Resize((IMG_SIZE, IMG_SIZE), antialias= False),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
         ])
 
