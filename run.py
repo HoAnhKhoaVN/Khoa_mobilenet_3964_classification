@@ -73,6 +73,8 @@ def main():
         num_classes= len(classes),
         mode = args.mode,
     )
+    print(f'Model architecture:')
+    print(model)
     # endregion
 
     # region get criterion and optimizer
