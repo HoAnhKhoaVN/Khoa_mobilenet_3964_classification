@@ -109,6 +109,7 @@ def train(
                     if current_accuracy > best_accuracy:
                         best_accuracy = current_accuracy
                         torch.save(model.state_dict(), f'{save_model_path}/best_accuracy.pth')
+                    torch.save(model.state_dict(), f'{save_model_path}/current_accuracy.pth')
                     log.write(f'{"Best_accuracy":17s}: {best_accuracy:0.3f}\n')
 
 
