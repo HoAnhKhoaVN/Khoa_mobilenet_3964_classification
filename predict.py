@@ -117,6 +117,7 @@ def predict():
                 print(f'Size images: {images.size()}')
                 preds = model(images)
                 print(f'Size predictions: {preds.size()}')
+                preds = F.softmax(preds, dim=1)
                 preds_prob, preds = preds.max(1)
 
                 print(f'Predictions: {preds}')
