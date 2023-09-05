@@ -8,7 +8,7 @@ class MyEfficientnetB3(Module):
         num_classes: int = 4
     ):
         super().__init__()
-        self.base_model = efficientnet_b3(weight= EfficientNet_B3_Weights.IMAGENET1K_V1)
+        self.base_model = efficientnet_b3(weights = EfficientNet_B3_Weights.IMAGENET1K_V1)
         in_features = self.base_model.classifier[1].in_features
         self.base_model.classifier[1] = Linear(in_features, num_classes)
         
