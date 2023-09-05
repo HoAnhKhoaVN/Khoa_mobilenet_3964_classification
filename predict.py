@@ -114,14 +114,14 @@ def predict():
         with torch.no_grad():
             for image_tensors, image_path_list in predictloader:
                 images = image_tensors.to(device)
-                print(f'Size images: {images.size()}')
+                # print(f'Size images: {images.size()}')
                 preds = model(images)
-                print(f'Size predictions: {preds.size()}')
+                # print(f'Size predictions: {preds.size()}')
                 preds = F.softmax(preds, dim=1)
                 preds_prob, preds = preds.max(1)
 
-                print(f'Predictions: {preds}')
-                print(f'Size predictions probability: {preds_prob}')
+                # print(f'Predictions: {preds}')
+                # print(f'Size predictions probability: {preds_prob}')
                 for img_name, pred, pred_max_prob in zip(image_path_list, preds, preds_prob):
                     str_val = str(pred.item())
                     log.write(f'{img_name:25s}\t{str_val:25s}\t{pred_max_prob}\n')
