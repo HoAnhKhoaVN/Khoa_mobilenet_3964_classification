@@ -11,10 +11,13 @@ def evaluate(
     evaluation_loader: DataLoader,
     criterion,
     device,
+    is_show: bool = False
 ):
     n_correct = 0
     length_of_data = 0
     valid_loss_avg = Averager()
+
+    
 
     for i, (image_tensors, labels) in enumerate(evaluation_loader):
         batch_size = image_tensors.size(0)
