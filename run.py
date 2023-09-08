@@ -74,7 +74,7 @@ def main():
         mode = args.mode,
     )
     print(f'Model architecture:')
-    print(model)
+    # print(model)
     # endregion
 
     # region get criterion and optimizer
