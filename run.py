@@ -22,7 +22,7 @@ def init_model(
     if mode.lower() == 'maml':
         model = MobileNetV2(num_classes = num_classes).to(device)
     if mode.lower() == 'han_nom_cls':
-       model = MyEfficientnetB3(num_classes=4).to(device)
+       model = MyEfficientnetB3(num_classes = num_classes).to(device)
     else:
         model = MyMobileNetV2(num_classes = num_classes).to(device)
     # endregion
