@@ -74,6 +74,11 @@ def predict():
                     type=int,
                     help='input for the batch size initializations',
                     default= 1024)
+    
+    parser.add_argument('--num_class',
+                type=int,
+                help='Number of class to predict',
+                default= 4)
     args = parser.parse_args()
     print(f'args: {args}')
     
@@ -82,7 +87,7 @@ def predict():
     # region get model
     model = init_model(
         checkpoint_path = args.checkpoint_path,
-        num_classes= 4,
+        num_classes= args.num_class,
         mode = args.mode,
     )
     # endregion
